@@ -1,7 +1,5 @@
 package com.simibubi.create.foundation.blockEntity.behaviour;
 
-import com.simibubi.create.foundation.utility.AdventureUtil;
-
 import org.apache.commons.lang3.mutable.MutableBoolean;
 
 import com.simibubi.create.AllBlocks;
@@ -9,10 +7,12 @@ import com.simibubi.create.AllTags.AllItemTags;
 import com.simibubi.create.CreateClient;
 import com.simibubi.create.foundation.blockEntity.SmartBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.filtering.SidedFilteringBehaviour;
+import com.simibubi.create.foundation.utility.AdventureUtil;
 import com.simibubi.create.foundation.utility.RaycastHelper;
 
 import io.github.fabricators_of_create.porting_lib.util.EnvExecutor;
 import net.fabricmc.api.EnvType;
+import net.fabricmc.fabric.api.entity.FakePlayer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -64,7 +64,7 @@ public class ValueSettingsInputHandler {
 				sidedSlot.fromSide(ray.getDirection());
 			}
 
-			boolean fakePlayer = player.isFake();
+			boolean fakePlayer = player instanceof FakePlayer;
 			if (!valueSettingsBehaviour.testHit(ray.getLocation()) && !fakePlayer)
 				continue;
 

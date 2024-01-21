@@ -1,14 +1,14 @@
 package com.simibubi.create.foundation.fluid;
 
+import java.util.List;
+
 import com.simibubi.create.foundation.utility.Iterate;
-import io.github.fabricators_of_create.porting_lib.util.FluidStack;
+
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
 import net.fabricmc.fabric.api.transfer.v1.storage.Storage;
 import net.fabricmc.fabric.api.transfer.v1.storage.base.CombinedStorage;
 import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
 import net.fabricmc.fabric.api.transfer.v1.transaction.TransactionContext;
-
-import java.util.List;
 
 /**
  * Combines multiple IFluidHandlers into one interface (See CombinedInvWrapper
